@@ -11,12 +11,12 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
 
     @IBOutlet weak var TableView: UITableView!
     var items : Array<Post> = Array()
+    var postId: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         initViews()
-        NotificationCenter.default.addObserver(self, selector: #selector(doThisWhenNotify(notification: )), name: NSNotification.Name(rawValue: "load"), object: nil)
     }
     
     func refreshTableView(posts: [Post]){
@@ -60,6 +60,7 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         TableView.delegate = self
         initNavigation()
         apiPostList()
+        refreshView()
     }
 
     func initNavigation(){
@@ -76,10 +77,16 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    func callEditViewController(){
+    func callEditViewController(id: String){
         let vc = EditViewController(nibName: "EditViewController", bundle: nil)
+        vc.POSTID = id
         let navigationController = UINavigationController(rootViewController: vc)
         self.present(navigationController, animated: true, completion: nil)
+    }
+    
+    func refreshView(){
+        NotificationCenter.default.addObserver(self, selector: #selector(doThisWhenNotifyLoad(notification: )), name: NSNotification.Name(rawValue: "load"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(doThisWhenNotifyEdit(notification: )), name: NSNotification.Name(rawValue: "edit"), object: nil)
     }
     
     // MARK: - Action
@@ -92,10 +99,16 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         callCreateViewController()
     }
     
-    @objc func doThisWhenNotify(notification : NSNotification) {
+    @objc func doThisWhenNotifyLoad(notification : NSNotification) {
             //update tableview
         apiPostList()
     }
+    
+    @objc func doThisWhenNotifyEdit(notification : NSNotification) {
+            //update tableview
+        apiPostList()
+    }
+    
     // MARK: - Table View
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
@@ -133,7 +146,7 @@ class HomeViewController: BaseViewController, UITableViewDelegate, UITableViewDa
         return UIContextualAction(style: .normal, title: "Edit"){ (action, swipeButtonView, completion) in
             print("Complete Here")
             completion(true)
-            self.callEditViewController()
+            self.callEditViewController(id: post.id!)
         }
     }
 }
