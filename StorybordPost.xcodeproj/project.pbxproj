@@ -36,6 +36,9 @@
 		768C212128A2204100095522 /* CreateRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C212028A2204100095522 /* CreateRouting.swift */; };
 		768C212328A2205100095522 /* CreatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C212228A2205100095522 /* CreatePresenter.swift */; };
 		768C212528A2205E00095522 /* CreateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C212428A2205E00095522 /* CreateInteractor.swift */; };
+		768C212728A23ED300095522 /* EditRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C212628A23ED300095522 /* EditRouting.swift */; };
+		768C212928A23EF200095522 /* EditPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C212828A23EF200095522 /* EditPresenter.swift */; };
+		768C212B28A23F0300095522 /* EditInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768C212A28A23F0300095522 /* EditInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +90,9 @@
 		768C212028A2204100095522 /* CreateRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateRouting.swift; sourceTree = "<group>"; };
 		768C212228A2205100095522 /* CreatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePresenter.swift; sourceTree = "<group>"; };
 		768C212428A2205E00095522 /* CreateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateInteractor.swift; sourceTree = "<group>"; };
+		768C212628A23ED300095522 /* EditRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRouting.swift; sourceTree = "<group>"; };
+		768C212828A23EF200095522 /* EditPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPresenter.swift; sourceTree = "<group>"; };
+		768C212A28A23F0300095522 /* EditInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +239,9 @@
 			children = (
 				76270F112885BCB400F5623D /* EditViewController.swift */,
 				76270F122885BCB400F5623D /* EditViewController.xib */,
+				768C212628A23ED300095522 /* EditRouting.swift */,
+				768C212828A23EF200095522 /* EditPresenter.swift */,
+				768C212A28A23F0300095522 /* EditInteractor.swift */,
 			);
 			path = edit;
 			sourceTree = "<group>";
@@ -392,16 +401,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				768C212B28A23F0300095522 /* EditInteractor.swift in Sources */,
 				7640AB172886D3E00031D034 /* Network.swift in Sources */,
 				768C211F28A1EB5100095522 /* HttpManager.swift in Sources */,
 				768C212128A2204100095522 /* CreateRouting.swift in Sources */,
 				768C211928A11DD600095522 /* HomeRouting.swift in Sources */,
+				768C212728A23ED300095522 /* EditRouting.swift in Sources */,
 				76270F0F2885BC8B00F5623D /* CreateViewController.swift in Sources */,
 				768C211B28A11DE700095522 /* HomePresenter.swift in Sources */,
 				76270EDF288558AE00F5623D /* StorybordPost.xcdatamodeld in Sources */,
 				76270F132885BCB400F5623D /* EditViewController.swift in Sources */,
 				76270F192885BF2800F5623D /* Post.swift in Sources */,
 				768C211D28A11E0600095522 /* HomeInteractor.swift in Sources */,
+				768C212928A23EF200095522 /* EditPresenter.swift in Sources */,
 				76270ED5288558AE00F5623D /* AppDelegate.swift in Sources */,
 				76270ED7288558AE00F5623D /* SceneDelegate.swift in Sources */,
 				768C212328A2205100095522 /* CreatePresenter.swift in Sources */,

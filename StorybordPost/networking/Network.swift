@@ -66,6 +66,13 @@ class AFHttp{
         return parameters
     }
     
+    class func paramsPostWith(id: Int) -> Parameters {
+        let parameters: Parameters = [
+            "id" : id
+        ]
+        return parameters
+    }
+    
     class func paramsPostUpdate (post: Post) -> Parameters{
         let parameters: Parameters = [
             "id": post.id!,
